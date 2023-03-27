@@ -154,3 +154,24 @@ function setMultipleAttributes(element, attributesToSet) {
     // [i] is the attribute value(s)
   }
 }
+
+// Global event listener
+function addGlobalEventListener(type, selector, callback, option = false) {
+  document.addEventListener(
+    type,
+    (e) => {
+      if (e.target.matches(selector)) callback(e)
+    },
+    option
+  )
+}
+
+// Clear number areas on focusin
+addGlobalEventListener(
+  "focusin",
+  "[data-number-input]",
+  (e) => {
+    e.target.value = ""
+  },
+  true
+)
