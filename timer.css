@@ -130,7 +130,7 @@ a {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    width: fit-content;
+    width: -moz-fit-content; width: fit-content;
     margin: 0 auto;
 }
 
@@ -176,7 +176,7 @@ a {
     font-weight: 600;
     color: red;
     border: 1px dashed red;
-    width: fit-content;
+    width: -moz-fit-content; width: fit-content;
     padding: 0.5rem 1rem;
     margin: 0 auto;
 }
