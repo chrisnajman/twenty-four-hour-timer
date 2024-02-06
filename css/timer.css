@@ -1,0 +1,131 @@
+.time-form {
+    max-width: 120rem;
+    background-color: var(--form-bg);
+    font-size: clamp(1.6rem, 1.3421rem + 1.4737vw, 3rem);
+    border: 0.5rem solid var(--clr-green);
+    padding: clamp(1.6rem, 1.3053rem + 1.6842vw, 3.2rem);
+    box-shadow: -1px 4px 10px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 2rem;
+
+    & .appearance::-webkit-outer-spin-button,
+    & .appearance::-webkit-inner-spin-button {
+        appearance: none;
+        margin: 0;
+    }
+
+    & input {
+        appearance: textfield;
+        text-align: center;
+        font-family: monospace;
+        font-size: inherit;
+        background-color: var(--form-input-bg);
+        color: var(--form-input-txt);
+    }
+
+    & button {
+        margin: auto 0 auto auto;
+    }
+
+    & label {
+        margin-inline-start: auto;
+        margin-inline-end: 1.5rem;
+    }
+
+    & .warning {
+        background-color: var(--header-footer-bg);
+        width: -moz-fit-content;
+        width: fit-content;
+        padding: 0.5rem 1rem;
+        margin: 2rem auto 0;
+    }
+}
+
+.time-form-elements {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2.4rem, 1.9211rem + 2.7368vw, 5rem);
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 auto;
+
+    @media screen and (width >= 550px) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: auto;
+    }
+
+    & > div {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.modal {
+    flex-direction: column;
+    gap: 1.6rem;
+    position: absolute;
+    z-index: 400;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: clamp(1.6rem, 1.2rem + 1.7778vw, 3.2rem);
+    border: 0.5rem solid var(--clr-green);
+    border-radius: 2rem;
+    background-color: var(--timer-display-bg);
+    color: var(--timer-display-txt);
+
+    width: calc(100% - 2rem);
+
+    @media screen and (width >= 400px) {
+        width: auto;
+    }
+
+    button {
+        margin-inline-start: auto;
+        font-size: clamp(1.6rem, 1.3421rem + 1.4737vw, 3rem);
+    }
+    & .timer-message {
+        font-size: clamp(2.4rem, 2.1053rem + 1.6842vw, 4rem);
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    & .timer-display {
+        margin: 0 auto;
+        font-family: monospace;
+        font-size: clamp(3rem, 2.75rem + 1.1111vw, 4rem);
+    }
+
+    & .audio-wrapper {
+        height: 0.1rem;
+        overflow: hidden;
+
+        & audio {
+            visibility: hidden;
+        }
+    }
+}
+
+#modal {
+    display: none;
+
+    &.open {
+        display: flex;
+    }
+}
+
+#overlay {
+    display: none;
+    position: absolute;
+    z-index: 350;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--overlay-bg);
+
+    &.open {
+        display: block;
+    }
+}

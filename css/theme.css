@@ -1,0 +1,47 @@
+:root {
+    --clr-light-blue: rgb(135, 206, 235);
+    --clr-lightest: white;
+    --clr-light-green: rgb(239, 250, 250);
+    --clr-mid: #555;
+    --clr-green: rgb(4, 167, 167);
+    --clr-grey-green: rgb(44, 58, 58);
+    --clr-dark-green: rgb(3, 94, 94);
+    --clr-dark: #333;
+    --clr-darker: #222;
+    --clr-darkest: black;
+    --clr-warning: red;
+    --clr-orange: orange;
+    --clr-transparent: transparent;
+    --highlight: var(--clr-light-blue);
+
+    --header-footer-border: var(--clr-green);
+
+    /* Dark theme (default) */
+    --body-bg: var(--clr-darker);
+    --body-txt: var(--clr-lightest);
+    --header-footer-bg: var(--clr-darkest);
+    --header-footer-txt: var(--clr-lightest);
+    --theme-icon: var(--clr-lightest);
+    --theme-txt: var(--clr-lightest);
+    --form-bg: var(--clr-grey-green);
+    --form-input-bg: var(--clr-darkest);
+    --form-input-txt: var(--clr-lightest);
+    --timer-display-bg: var(--clr-darkest);
+    --timer-display-txt: var(clr-lightest);
+    --overlay-bg: rgb(0, 0, 0, 0.8);
+}
+
+.light-theme {
+    --body-bg: var(--clr-light-green);
+    --body-txt: var(--clr-darkest);
+    --header-footer-bg: var(--clr-lightest);
+    --header-footer-txt: var(--clr-darkest);
+    --theme-icon: var(--clr-orange);
+    --theme-txt: var(--clr-darkest);
+    --form-bg: var(--clr-lightest);
+    --form-input-bg: var(--clr-lightest);
+    --form-input-txt: var(--clr-darkest);
+    --timer-display-bg: var(--clr-lightest);
+    --timer-display-txt: var(clr-darkest);
+    --overlay-bg: rgb(255, 255, 255, 0.8);
+}

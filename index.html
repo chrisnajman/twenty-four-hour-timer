@@ -1,107 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap"
-      rel="stylesheet"
-    />
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <title>24 Hour Timer</title>
-    <link rel="stylesheet" href="timer.css" />
-    <script src="timer.js" defer></script>
-  </head>
-  <body>
-    <div class="page-wrapper">
-      <header class="heading-main">
-        <h1 class="page-heading">24 Hour Timer</h1>
-      </header>
-      <main class="content-main">
-        <form id="time-form" class="time-form">
-          <div class="time-form-elements" id="time-form-elements">
-            <div>
-              <label for="hours">Hours:</label>
-              <input
-                type="number"
-                class="appearance"
-                id="hours"
-                min="0"
-                max="23"
-                value="0"
-                data-number-input
-              />
-            </div>
-            <div>
-              <label for="minutes">Minutes:</label>
-              <input
-                type="number"
-                class="appearance"
-                id="minutes"
-                min="0"
-                max="59"
-                value="0"
-                data-number-input
-              />
-            </div>
-            <div>
-              <label for="seconds">Seconds:</label>
-              <input
-                type="number"
-                class="appearance"
-                id="seconds"
-                min="0"
-                max="59"
-                value="0"
-                data-number-input
-              />
-            </div>
-            <button type="submit" id="time-btn">Start</button>
-          </div>
-        </form>
 
-        <template id="timer-template">
-          <div id="overlay"></div>
-          <div id="modal">
-            <div class="timer-wrapper">
-              <h2 class="timer-message" id="timer-message">Time remaining:</h2>
-              <table class="timer-display">
-                <tr class="sr-only">
-                  <th>Hours</th>
-                  <th>Minutes</th>
-                  <th>Seconds</th>
-                </tr>
-                <tr>
-                  <td><span data-timer-hours></span></td>
-                  <td><span data-timer-minutes></span></td>
-                  <td><span data-timer-seconds></span></td>
-                </tr>
-              </table>
-              <div class="audio-wrapper">
-                <audio id="audio" controls>
-                  Your browser does not support the audio element.
-                </audio>
-              </div>
-            </div>
-            <button id="close-modal-btn" class="close-modal-btn">Close</button>
-          </div>
-        </template>
-      </main>
-      <footer class="page-footer">
-        <ul>
-          <li>
-            <a
-              href="https://github.com/chrisnajman/twenty-four-hour-timer"
-              target="_blank"
-              rel="noopener noreferrer"
-              >GitHub repository</a
-            >
-          </li>
-        </ul>
-      </footer>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reskin 24-Hour Timer</title>
+    <meta name="description" content="Set a timer for hours, minutes and seconds">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="manifest" href="./site.webmanifest">
+    <script src="./js/index.js" type="module"></script>
+</head>
+
+<body>
+    <a href="#main-content" class="element-invisible element-focusable skip-link">Skip to main content</a>
+    <form id="theme-picker" class="theme-picker">
+        <button type="button" id="btn-theme-toggle" class="btn-theme-toggle" aria-pressed>
+            <svg role="img" class="theme-icon" id="theme-darkmode">
+                <use href="./img/sprite.svg#moon"></use>
+            </svg>
+            <svg role="img" class="theme-icon hide" id="theme-lightmode">
+                <use href="./img/sprite.svg#sun"></use>
+            </svg>
+            <span>Dark Mode:</span> <span id="mode" class="mode"></span>
+            <span class="btn-theme-state" aria-hidden="true"></span>
+        </button>
+    </form>
+
+    <div class="page-layout">
+
+        <header class="page-header" id="page-header">
+            <svg role="img" class="icon-logo">
+                <use href="./img/sprite.svg#logo"></use>
+            </svg>
+            <h1>Reskin 24-Hour Timer</h1>
+        </header>
+
+        <main class="main">
+            <form id="time-form" class="time-form">
+                <div class="time-form-elements" id="time-form-elements">
+                    <div>
+                        <label for="hours">Hours:</label>
+                        <input type="number" class="appearance" id="hours" min="0" max="23" value="0"
+                            data-number-input />
+                    </div>
+                    <div>
+                        <label for="minutes">Minutes:</label>
+                        <input type="number" class="appearance" id="minutes" min="0" max="59" value="0"
+                            data-number-input />
+                    </div>
+                    <div>
+                        <label for="seconds">Seconds:</label>
+                        <input type="number" class="appearance" id="seconds" min="0" max="59" value="0"
+                            data-number-input />
+                    </div>
+                    <button>Start</button>
+                </div>
+            </form>
+
+            <template id="timer-template">
+                <div id="overlay"></div>
+                <div id="modal" class="modal">
+                    <h2 class="timer-message" id="timer-message">Time remaining:</h2>
+                    <table class="timer-display">
+                        <tr class="visually-hidden">
+                            <th>Hours</th>
+                            <th>Minutes</th>
+                            <th>Seconds</th>
+                        </tr>
+                        <tr>
+                            <td><span data-timer-hours></span></td>
+                            <td><span data-timer-minutes></span></td>
+                            <td><span data-timer-seconds></span></td>
+                        </tr>
+                    </table>
+                    <div class="audio-wrapper">
+                        <audio id="audio" controls>
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <button id="close-modal-btn">Close</button>
+                </div>
+            </template>
+        </main>
+        <footer class="page-footer">
+            <ul role="list">
+                <li><a href="https://github.com/chrisnajman/twenty-four-hour-timer" target="_blank"
+                        rel="noopener noreferrer">GitHub Repository</a></li>
+            </ul>
+        </footer>
     </div>
-  </body>
+
+</body>
+
 </html>
