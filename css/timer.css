@@ -85,8 +85,10 @@
         margin-inline-start: auto;
         font-size: clamp(1.6rem, 1.3421rem + 1.4737vw, 3rem);
     }
+
     & .timer-message {
         font-size: clamp(2.4rem, 2.1053rem + 1.6842vw, 4rem);
+        font-weight: normal;
         text-align: center;
         margin: 0 auto;
     }
@@ -94,7 +96,7 @@
     & .timer-display {
         margin: 0 auto;
         font-family: monospace;
-        font-size: clamp(3rem, 2.75rem + 1.1111vw, 4rem);
+        font-size: clamp(3rem, 2.5rem + 2.2222vw, 5rem);
     }
 
     & .audio-wrapper {
