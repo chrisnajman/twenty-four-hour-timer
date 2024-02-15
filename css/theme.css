@@ -26,7 +26,7 @@
     --form-bg: var(--clr-grey-green);
     --form-input-bg: var(--clr-darkest);
     --form-input-txt: var(--clr-lightest);
-    --timer-display-bg: var(--clr-darkest);
+    --timer-display-bg: var(--clr-grey-green);
     --timer-display-txt: var(clr-lightest);
     --overlay-bg: rgb(0, 0, 0, 0.8);
 }
