@@ -17,6 +17,9 @@ permalink: /index.html
 - When the time has elapsed, the message "Time's up!" is displayed, and an audio alarm starts to play.
 - Clicking the 'Close' button or the modal background, at any time, closes the timer and reloads the page.
 
+> [!NOTE]
+> Update 03/01/26: The `document.title` (`<title>`) now updates dynamically (so you can see the countdown even if you're on another tab).
+
 This is an extension of my _Minute Timer_:
 
 - [GitHub repository](https://github.com/chrisnajman/minute-timer)

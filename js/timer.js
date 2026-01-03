@@ -92,6 +92,7 @@ export default function twentyFourHourTimer() {
         timerHours.textContent = "00:"
         timerMinutes.textContent = "00:"
         timerSeconds.textContent = "00"
+        setDocTitle("Time's up!")
       } else {
         // Update the timer HTML text with leading zeros
         timerInnerText(remainingTime)
@@ -111,6 +112,9 @@ export default function twentyFourHourTimer() {
     ).slice(-2)}:`
 
     timerSeconds.textContent = `${("0" + (totalSeconds % 60)).slice(-2)}`
+    setDocTitle(
+      `${timerHours.textContent}${timerMinutes.textContent}${timerSeconds.textContent}`
+    )
   }
 
   // Audio
@@ -143,6 +147,7 @@ export default function twentyFourHourTimer() {
     modal.classList.remove("open")
     overlay.classList.remove("open")
     window.location.reload()
+    setDocTitle("24-Hour Timer")
   }
 
   // Helper = set multiple attributes
@@ -174,4 +179,9 @@ export default function twentyFourHourTimer() {
     },
     true
   )
+
+  // Dynamically set <title>
+  function setDocTitle(value) {
+    document.title = value
+  }
 }
