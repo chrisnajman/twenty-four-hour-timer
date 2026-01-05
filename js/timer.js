@@ -100,7 +100,7 @@ export default function twentyFourHourTimer() {
     }, 1000) // 1000 milliseconds = 1 second
   }
 
-  // Print hours/minutes/seconds to HTML
+  // Print hours/minutes/seconds to HTML <template> and <title>
   function timerInnerText(timeVar) {
     totalSeconds = Math.floor(timeVar / 1000)
     timerHours.textContent = `${("0" + Math.floor(totalSeconds / 3600)).slice(
