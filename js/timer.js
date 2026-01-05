@@ -112,9 +112,10 @@ export default function twentyFourHourTimer() {
     ).slice(-2)}:`
 
     timerSeconds.textContent = `${("0" + (totalSeconds % 60)).slice(-2)}`
-    setDocTitle(
-      `${timerHours.textContent}${timerMinutes.textContent}${timerSeconds.textContent}`
-    )
+
+    const countdown = `${timerHours.textContent}${timerMinutes.textContent}${timerSeconds.textContent}`
+
+    setDocTitle(countdown)
   }
 
   // Audio
